@@ -11,7 +11,7 @@ pkgname=$_linuxprefix-rtl8723bu
 _pkgname=rtl8723bu
 _libname=8723bu
 _commit=d79a676a8d3f0bb6ac8af126689c6ac6869cb6f2
-pkgver=470.161.03
+pkgver=20220818
 pkgrel=515891
 pkgdesc="A kernel module for Realtek 8723bu network cards"
 url="http://www.realtek.com.tw"
@@ -24,9 +24,9 @@ provides=("$_pkgname=$pkgver")
 groups=("$_linuxprefix-extramodules")
 source=("${_pkgname}-${pkgver}.zip::https://github.com/lwfinger/rtl8723bu/archive/$_commit.zip"
         "blacklist-rtl8xxxu.conf")
-sha256sums=(SKIP SKIP SKIP)
+sha256sums=('8a7d09d884e4971dfbf4d7170a504441d2a393754c7e6eef2c46f27359f52576'
             '7c726ad04083c8e620bc11c837e5f51d3e9e2a5c3e19c333b2968eb39f1ef07e')
-
+install=rtl8723bu.install
 
 build() {
     _kernver=$(find /usr/lib/modules -type d -iname 5.15.89*xanmod* | rev | cut -d "/" -f1 | rev)
