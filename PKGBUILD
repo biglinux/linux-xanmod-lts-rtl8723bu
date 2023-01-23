@@ -24,9 +24,9 @@ provides=("$_pkgname=$pkgver")
 groups=("$_linuxprefix-extramodules")
 source=("${_pkgname}-${pkgver}.zip::https://github.com/lwfinger/rtl8723bu/archive/$_commit.zip"
         "blacklist-rtl8xxxu.conf")
-sha256sums=(SKIP)
+sha256sums=(SKIP SKIP SKIP)
             '7c726ad04083c8e620bc11c837e5f51d3e9e2a5c3e19c333b2968eb39f1ef07e')
-install=rtl8723bu.install
+
 
 build() {
     _kernver=$(find /usr/lib/modules -type d -iname 5.15.89*xanmod* | rev | cut -d "/" -f1 | rev)
