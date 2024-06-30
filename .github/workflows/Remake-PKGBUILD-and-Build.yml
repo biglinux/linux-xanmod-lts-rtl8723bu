@@ -23,6 +23,10 @@ jobs:
           echo "mkdepends: ${{ github.event.client_payload.mkdepends }}"
           echo "xanmod: ${{ github.event.client_payload.xanmod }}"
           echo "branch_build: ${{ github.event.client_payload.branch_build }}"
+          
+      # # Tmate ##
+      # - name: Setup tmate session
+      #   uses: mxschmitt/action-tmate@v3
 
       - name: Remake PKGBUILD
         id: remakepkg
@@ -33,10 +37,6 @@ jobs:
           mod: ${{ github.event.client_payload.mod }}
           mkdepends: ${{ github.event.client_payload.mkdepends }}
           xanmod: ${{ github.event.client_payload.xanmod }}
-          
-      # Tmate ##
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
 
       - name: Update github
         run: |
